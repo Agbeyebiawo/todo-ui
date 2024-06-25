@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  /* // layout */
+  --mobile: 350px;
+  --desktop: 1440px;
+
+  /* // primary colors */
+  ---bright-blue: hsl(220, 98%, 61%);
+  /* // linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
+  --Check-Background: ("very-light-blue":hsl(192, 100%, 67%), "violet-gray": hsl(280, 87%, 65%));
+
+  /* // light theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* // dark them-- */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue-Dark1: hsl(234, 39%, 85%);
+  /* // (hover) */
+  --Light-Grayish-Blue-Dark2 : hsl(236, 33%, 92%);
+  /* //  */
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue1: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue2: hsl(237, 14%, 26%);
+
+  /* // body copy */
+  --font-size: 18px;
+  --font-regular: 400;
+  --font-bold: 700;
+}
+
+body{
+  background-image: url('assests/images/bg-desktop-light.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--Very-Light-Gray);
+  color: var(--Light-Grayish-Blue);
+}
+
+.column{
+  /* height: 340px; */
+  position: relative; 
+  border-radius: 0.375rem;
+}
+
+.column .todo-details{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.checked{
+  background: linear-gradient(to bottom right,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.title{
+  letter-spacing: 0.7ch;
+}
+
+.todo-title:hover .image{
+  display: block;
+}
+
+input[type='text']{
+  outline: none;
+  border: none;
+  caret-color: var(---bright-blue);
+}
+
+input[type=text]:focus{
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+::placeholder {
+  color: #333;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #333;
+}
+
+.dark-theme{
+  background-image: url('assests/images/bg-desktop-dark.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Light-Grayish-Blue);
+}
+
+.dark-theme .column{
+  background-color: var(--Very-Dark-Grayish-Blue2);
+  box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -webkit-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -moz-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+}
+
+.dark-theme .form{
+  background-color: var(--Very-Dark-Grayish-Blue2);
+}
+
+.dark-theme .column .todo-details{
+  background-color: var(--Very-Dark-Grayish-Blue2);
+  /* box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -webkit-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -moz-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue); */
+}
+
+.dark-theme .col-span-2{
+  background-color: var(--Very-Dark-Grayish-Blue2);
+  box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -webkit-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+  -moz-box-shadow: 0px 10px 14px 3px var(--Very-Dark-Blue);
+}
+
+.dark-theme .todo{
+  color: var(--Light-Grayish-Blue);
+  border-bottom: 2px solid var(--Very-Dark-Grayish-Blue);
+}
+
+@media not all and (min-width: 640px) {
+   body{
+      background-image: url('assests/images/bg-mobile-light.jpg');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
+   }
+
+   .dark-theme{
+      background-image: url('assests/images/bg-mobile-dark.jpg');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
+   }
+
+   .header, .form, .column, .col-span-2{
+      width: 90%;
+   }
+}
